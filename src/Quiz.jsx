@@ -46,7 +46,7 @@ export default function Quiz() {
   const [fading, setFading] = useState(false)
 
   useEffect(() => {
-    fetch('/quiz.md')
+    fetch(`${import.meta.env.BASE_URL}quiz.md`)
       .then(r => r.text())
       .then(text => setQuestions(parseMarkdown(text)))
   }, [])
